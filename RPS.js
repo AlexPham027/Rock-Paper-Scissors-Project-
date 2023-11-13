@@ -1,11 +1,11 @@
 //Creating a score board with the use of objects
 let score = JSON.parse(localStorage.getItem ('score')) || { wins: 0, losses: 0, ties: 0 };
 let result = '';
-updateScoreElement ();
+updateScoreElement();
 
 // Function for the computer's move 
-function pickComputerMove () {
-  const randomNumber = Math.random (); 
+function pickComputerMove() {
+  const randomNumber = Math.random(); 
   let computerMove = '';
 
   if (randomNumber >= 0 && randomNumber < 1 / 3) {
@@ -15,7 +15,6 @@ function pickComputerMove () {
   } else if(randomNumber >= 2 / 3 && randomNumber < 1) { 
     computerMove = 'scissors';
   }
-
 	return computerMove;
 }
 
@@ -24,37 +23,37 @@ function setResult(value) {
 }
   
 // Create a playGame function with the parameter of playerMove 
-function playGame (playerMove) {
+function playGame(playerMove) {
 	const computerMove = pickComputerMove ();
 	
 	//Here if playerMove is scissors, this will be the conditional statements 
 	if (playerMove === 'scissors') {
 		if (computerMove === 'rock') {
-			result = 'You lose.';
+			setResult('You lose.');
 		} else if (computerMove === 'paper') {
-			result = 'You win.';
+			setResult('You win.');
 		} else if (computerMove === 'scissors') {
-			result = 'Tie.';
+			setResult('Tie.');
 		}
 
 		//Here if playerMove is paper, this will be the conditional statements
 	} else if (playerMove === 'paper') {
 				if (computerMove === 'rock') {
-			result = 'You win.';
+			setResult('You win.');
 		} else if (computerMove === 'paper') {
-			result = 'Tie.';
+			setResult('Tie.');
 		} else if (computerMove === 'scissors') {
-			result = 'You lose.';
+			setResult('You lose.');
 		}
 		
 		//Here if playerMove is rock, this will be the conditional statements
 	} else if (playerMove === 'rock') {
 				if (computerMove === 'rock') {
-			result = 'Tie.';
+			setResult('Tie.');
 		} else if (computerMove === 'paper') {
-			result = 'You lose.';
+			setResult('You lose.');
 		} else if (computerMove === 'scissors') {
-			result = 'You win.';
+			setResult('You win.');
 		}
 	}
 
@@ -70,15 +69,15 @@ function playGame (playerMove) {
 	//Saving in local storage so score does not reset after refresh 
 	localStorage.setItem('score', JSON.stringify (score));
 	
-	updateScoreElement ();
+	updateScoreElement();
 
-	document.querySelector ('.js-result').innerHTML = result;
-	document.querySelector ('.js-moves').innerHTML = `You chose <img src="${playerMove}-emoji.png" class = "move-icon">
-	<img src = "${computerMove}-emoji.png" class = "move-icon"> Computer chose` ;
+	document.querySelector('.js-result').innerHTML = result;
+	document.querySelector('.js-moves').innerHTML = `You chose <img src="${playerMove}-emoji.png" class="move-icon">
+	<img src="${computerMove}-emoji.png" class="move-icon"> Computer chose` ;
 }
 
 // Function for scare updater 
 function updateScoreElement() {
-  document.querySelector ('.js-score').innerHTML = `Wins: ${score.wins}, Losses:${score.losses}, Ties: ${score.ties}`;
+  document.querySelector('.js-score').innerHTML = `Wins: ${score.wins}, Losses:${score.losses}, Ties: ${score.ties}`;
 };
 
