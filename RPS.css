@@ -2,11 +2,11 @@ body {
   background-color:rgb(25,25,25);
   color: white;
   font-family: arial;
-}
-
-.title{
-  font-size: 30px;
-  font-weight: bold;
+	text-align: center;
+	min-height: 100vh;
+	min-width: 100vw;
+	margin: auto;
+	padding-top: 10%;
 }
 
 .move-icon{
