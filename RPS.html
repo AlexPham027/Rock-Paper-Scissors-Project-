@@ -11,47 +11,43 @@
 
   <body>
 
-    <p
-    class = "title"
-    > Rock Paper Scissors </p>
+		<div id="header">
+			<p class = "title"> Rock Paper Scissors </p>
+		</div>
 
-    <button onclick = " 
-    // Here we have the function playgame for playerMove rock.
-    playGame ('rock'); 
-    " class="move-button"
-    > <img src = "rock-emoji.png" class="move-icon">
-     </button>
+		<div id="buttons">
+			<!-- Here we have the function playgame for playerMove rock. -->
+			<button onclick="playGame ('rock');" class="move-button"><img src = "rock-emoji.png" class="move-icon"></button>
 
-    <button onclick = " 
-    // Here we have the function playgame for playerMove paper 
-     playGame ('paper');
-    " class="move-button"
-    ><img src="paper-emoji.png" class ="move-icon"> </button>
+			<!-- Here we have the function playgame for playerMove paper -->
+			<button onclick = "playGame ('paper');" class="move-button"><img src="paper-emoji.png" class ="move-icon"></button>
 
-    <button onclick = " 
-    // Here we have the function playgame for playerMove scissors 
-      playGame ('scissors');
-    " class="move-button"
-    > <img src="scissors-emoji.png" class="move-icon"></button>
+			<!-- Here we have the function playgame for playerMove scissors -->
+			<button onclick="playGame ('scissors');" class="move-button"><img src="scissors-emoji.png" class="move-icon"></button>
+		</div>
 
+		<div id="js-container">
+			<p class = 'js-result result'></p>
+			<p class = 'js-moves'></p>
+			<p class = "js-score score"> </p>
+		</div>
 
-    <p class = 'js-result result'></p>
-    <p class = 'js-moves'></p>
-    <p class = "js-score score"> </p>
+		<div id="reset">
+			<button onclick="reset();" class="reset-score-button">Reset Score</button>
+		</div>
 
-    <button onclick = "
-      score.wins = 0;
-      score.losses = 0;
-      score.ties = 0;
-      localStorage.removeItem('score');
-      updateScoreElement();
-    " class ="reset-score-button"
-    > Reset Score </button>
+    <script src = "RPS.js"></script>
+		<script>
 
-    <script src = "RPS.js">
+			function reset() {
+				score.wins = 0;
+				score.losses = 0;
+				score.ties = 0;
+				localStorage.removeItem('score');
+				updateScoreElement();
+			}
 
-  
-    </script>
+		</script>
 
   </body>
 
