@@ -12,31 +12,31 @@
   <body>
 
 		<div id="header">
-			<p class = "title"> Rock Paper Scissors </p>
+			<h1>Rock Paper Scissors</h1>
 		</div>
 
 		<div id="buttons">
 			<!-- Here we have the function playgame for playerMove rock. -->
-			<button onclick="playGame ('rock');" class="move-button"><img src = "rock-emoji.png" class="move-icon"></button>
+			<button onclick="playGame ('rock');" class="move-button"><img src="rock-emoji.png" class="move-icon"></button>
 
 			<!-- Here we have the function playgame for playerMove paper -->
-			<button onclick = "playGame ('paper');" class="move-button"><img src="paper-emoji.png" class ="move-icon"></button>
+			<button onclick="playGame ('paper');" class="move-button"><img src="paper-emoji.png" class="move-icon"></button>
 
 			<!-- Here we have the function playgame for playerMove scissors -->
 			<button onclick="playGame ('scissors');" class="move-button"><img src="scissors-emoji.png" class="move-icon"></button>
 		</div>
 
 		<div id="js-container">
-			<p class = 'js-result result'></p>
-			<p class = 'js-moves'></p>
-			<p class = "js-score score"> </p>
+			<p class="js-result result"></p>
+			<p class="js-moves"></p>
+			<p class="js-score score"> </p>
 		</div>
 
 		<div id="reset">
 			<button onclick="reset();" class="reset-score-button">Reset Score</button>
 		</div>
 
-    <script src = "RPS.js"></script>
+    <script src="RPS.js"></script>
 		<script>
 
 			function reset() {
