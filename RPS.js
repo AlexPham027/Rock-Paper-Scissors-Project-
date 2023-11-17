@@ -1,16 +1,12 @@
 
       //Creating a score board with the use of objects
-      let score = JSON.parse (localStorage.getItem ('score'))
-      || {
-        wins: 0,
-        losses: 0,
-        ties: 0
-        };
+      let score = JSON.parse(localStorage.getItem ('score'))
+      || { wins: 0, losses: 0, ties: 0};
       
-      updateScoreElement ();
+      updateScoreElement();
       
       // Create a playGame function with the parameter of playerMove 
-      function playGame (playerMove){
+      function playGame(playerMove){
 
      
       const computerMove = pickComputerMove ();
@@ -61,11 +57,11 @@
       localStorage.setItem('score', JSON.stringify (score));
 
       
-      updateScoreElement ();
+      updateScoreElement();
 
-      document.querySelector ('.js-result').innerHTML = result;
+      document.querySelector('.js-result').innerHTML = result;
 
-      document.querySelector ('.js-moves').innerHTML = `You chose <img src="${playerMove}-emoji.png" class = "move-icon">
+      document.querySelector('.js-moves').innerHTML = `You chose <img src="${playerMove}-emoji.png" class = "move-icon">
       <img src = "${computerMove}-emoji.png" class = "move-icon"> Computer chose` ;
     }
 
@@ -73,13 +69,13 @@
 
       // Function for scare updater 
       function updateScoreElement() {
-        document.querySelector ('.js-score').innerHTML = 
+        document.querySelector('.js-score').innerHTML = 
       `Wins: ${score.wins}, Losses:${score.losses}, Ties: ${score.ties}`;
       };
   
       // Function for the computer's move 
-      function pickComputerMove () {
-        const randomNumber = Math.random (); 
+      function pickComputerMove() {
+        const randomNumber = Math.random(); 
 
         let computerMove = '';
 
